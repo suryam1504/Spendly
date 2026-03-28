@@ -20,7 +20,7 @@
         </p>
         <div class="hero-actions">
             <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
-            <a href="#" class="btn-primary">See how it works</a>
+            <button id="open-demo-modal" class="btn-primary">See how it works</button>
         </div>
     </div>
 
@@ -93,5 +93,51 @@
         <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
     </div>
 </section>
+
+<!-- Demo modal -->
+<div id="demo-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:500; align-items:center; justify-content:center;">
+    <div style="position:relative; width:min(840px, 92vw); background:#000; border-radius:12px; overflow:hidden;">
+        <button id="close-demo-modal" style="position:absolute; top:10px; right:14px; z-index:10; background:rgba(255,255,255,0.15); color:#fff; border:none; border-radius:50%; width:32px; height:32px; font-size:1.1rem; cursor:pointer; line-height:1;">&times;</button>
+        <div style="position:relative; padding-bottom:56.25%; height:0;">
+            <iframe id="demo-iframe"
+                src=""
+                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                style="position:absolute; inset:0; width:100%; height:100%; border:none;">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const modal    = document.getElementById('demo-modal');
+    const iframe   = document.getElementById('demo-iframe');
+    const openBtn  = document.getElementById('open-demo-modal');
+    const closeBtn = document.getElementById('close-demo-modal');
+
+    function openModal() {
+        iframe.src = iframe.dataset.src;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        iframe.src = '';
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+    });
+})();
+</script>
 
 {% endblock %}

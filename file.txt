@@ -1,3 +1,8 @@
+
+note: these are all prompts already written here, ready to be directly copy pasted in claude code
+
+---------------------------------------------------------------------------------
+
 Add two links to the footer in @templates/base.html:
 
 - "Terms and Conditions"
@@ -10,9 +15,11 @@ Do not modify anything else on the page.
 
 git commit -m "landing: add terms and privacy links to footer”
 
+---------------------------------------------------------------------------------
+
 Create a "Terms and Conditions" page for Spendly.
 
-1. Add a new route in [app.py](http://app.py/):
+1. Add a new route in [@app.py](http://app.py/):
 GET /terms → renders templates/terms.html
 2. Create templates/terms.html with generic terms and conditions
 content appropriate for a personal expense tracking app.
@@ -20,10 +27,12 @@ Include sections like: Acceptance of Terms, Use of Service,
 User Data, Limitations of Liability, and Changes to Terms.
 Extend base.html if it exists, otherwise match the style of
 landing.html.
-3. In templates/landing.html, update the "Terms and Conditions"
+3. In @templates/landing.html, update the "Terms and Conditions"
 footer link href from "#" to "/terms".
 
 git commit -m "landing: add terms and conditions page and route”
+
+---------------------------------------------------------------------------------
 
 Do the same as you did for the Terms and Conditions page,
 but for Privacy Policy.
@@ -39,6 +48,8 @@ Match the style of terms.html.
 footer link href from "#" to "/privacy".
 
 git commit -m "landing: add privacy policy page and route”
+
+---------------------------------------------------------------------------------
 
 I've attached a screenshot of the updated Spendly hero section design.
 
@@ -57,6 +68,8 @@ traffic light dots in top-left, 3 stat cards in a row,
 category bar chart below
 
 git commit -m "landing: redesign hero section to match mockup”
+
+---------------------------------------------------------------------------------
 
 Add a modal to templates/landing.html that opens when the user clicks
 "See how it works".

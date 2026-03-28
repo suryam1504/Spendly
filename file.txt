@@ -13,7 +13,7 @@ Point both to "#" as placeholder hrefs since the pages don't exist yet.
 
 Do not modify anything else on the page.
 
-git commit -m "landing: add terms and privacy links to footer”
+git commit -m "landing: add terms and privacy links to footer"
 
 ---------------------------------------------------------------------------------
 
@@ -30,24 +30,24 @@ landing.html.
 3. In @templates/landing.html, update the "Terms and Conditions"
 footer link href from "#" to "/terms".
 
-git commit -m "landing: add terms and conditions page and route”
+git commit -m "landing: add terms and conditions page and route"
 
 ---------------------------------------------------------------------------------
 
 Do the same as you did for the Terms and Conditions page,
 but for Privacy Policy.
 
-1. Add a new route in [app.py](http://app.py/):
+1. Add a new route in [@app.py](http://app.py/):
 GET /privacy → renders templates/privacy.html
 2. Create templates/privacy.html with generic privacy policy
 content appropriate for a personal expense tracking app.
 Include sections like: Data We Collect, How We Use Your Data,
 Data Storage, Third Party Services, and Contact Us.
 Match the style of terms.html.
-3. In templates/landing.html, update the "Privacy Policy"
+3. In @templates/landing.html, update the "Privacy Policy"
 footer link href from "#" to "/privacy".
 
-git commit -m "landing: add privacy policy page and route”
+git commit -m "landing: add privacy policy page and route"
 
 ---------------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ second line teal ("Know where it goes.")
 traffic light dots in top-left, 3 stat cards in a row,
 category bar chart below
 
-git commit -m "landing: redesign hero section to match mockup”
+git commit -m "landing: redesign hero section to match mockup"
 
 ---------------------------------------------------------------------------------
 
@@ -87,4 +87,4 @@ using any JS framework in this project
 
 Do not modify any other part of the page.
 
-git commit -m "landing: add youtube modal on see how it works click”
+git commit -m "landing: add youtube modal on see how it works click"
